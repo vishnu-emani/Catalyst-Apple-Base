@@ -12,6 +12,7 @@
 		271705A92C652B8A00367FEC /* EssentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271705A82C652B8A00367FEC /* EssentialsTests.swift */; };
 		271705AA2C652B8A00367FEC /* Essentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 2717059C2C652B8900367FEC /* Essentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27FC946E2C664718001343DD /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC946D2C664718001343DD /* FeedItem.swift */; };
+		27FC94702C6648A3001343DD /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC946F2C6648A3001343DD /* FeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		271705A32C652B8A00367FEC /* EssentialsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271705A82C652B8A00367FEC /* EssentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialsTests.swift; sourceTree = "<group>"; };
 		27FC946D2C664718001343DD /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		27FC946F2C6648A3001343DD /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				2717059C2C652B8900367FEC /* Essentials.h */,
 				2717059D2C652B8900367FEC /* Essentials.docc */,
 				27FC946D2C664718001343DD /* FeedItem.swift */,
+				27FC946F2C6648A3001343DD /* FeedLoader.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FC94702C6648A3001343DD /* FeedLoader.swift in Sources */,
 				27FC946E2C664718001343DD /* FeedItem.swift in Sources */,
 				2717059E2C652B8900367FEC /* Essentials.docc in Sources */,
 			);
