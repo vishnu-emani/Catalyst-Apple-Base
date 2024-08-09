@@ -1,0 +1,10 @@
+# Ignore Xcode-specific files
+*.xcuserstate
+*.xcuserdata/
+
+# Ignore build and derived data folders
+build/
+DerivedData/
+
+# Ignore macOS specific files
+.DS_Store
