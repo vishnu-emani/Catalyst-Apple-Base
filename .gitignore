@@ -1,6 +1,7 @@
 # Ignore Xcode-specific files
 *.xcuserstate
 *.xcuserdata/
+*.xcshareddata/
 
 # Ignore build and derived data folders
 build/
