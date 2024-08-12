@@ -8,19 +8,25 @@
 import Foundation
 
 public protocol HttpClient {
-    func get(requestedURL: URL)
+    func get(requestedURL: URL, completion: @escaping(Error) -> Void)
 }
 
 public final class RemoteFeedLoader {
      private let url: URL
      private let client: HttpClient
     
+    public enum Error: Swift.Error {
+        case connectivity
+    }
+    
     public init(url: URL, client: HttpClient) {
         self.url = url
         self.client = client
     }
     
-    public func load() {
-        self.client.get(requestedURL: url)
+    public func load(completion: @escaping(Error) -> Void = { _ in }) {
+        self.client.get(requestedURL: url) { error in
+            completion(.connectivity)
+        }
     }
 }
