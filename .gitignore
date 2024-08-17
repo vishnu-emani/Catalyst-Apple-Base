@@ -3,7 +3,7 @@
 *.xcuserdata/
 *.xcshareddata/
 *.xcdebugger/
-/xcuserdata/
+Essentials/Essentials.xcodeproj/xcuserdata/vishnu.xcuserdatad/xcdebugger/
 
 # Ignore build and derived data folders
 build/
