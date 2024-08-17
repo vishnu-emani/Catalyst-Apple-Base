@@ -2,6 +2,8 @@
 *.xcuserstate
 *.xcuserdata/
 *.xcshareddata/
+*.xcdebugger/
+/xcuserdata/
 
 # Ignore build and derived data folders
 build/
