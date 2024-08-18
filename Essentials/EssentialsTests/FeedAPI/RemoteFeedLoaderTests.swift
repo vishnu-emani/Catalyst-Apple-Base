@@ -41,7 +41,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let(sut, client) = makeSUT()
         
-        expect(sut, toCompleteWithResult: .failure(RemoteFeedLoader.Error.connectivity)) {
+        expect(sut, toCompleteWithResult: failure(.connectivity)) {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
         }
@@ -53,7 +53,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let samples = [199, 300, 400, 403, 500]
         
         samples.enumerated().forEach { index, code in
-            expect(sut, toCompleteWithResult: .failure(RemoteFeedLoader.Error.invalidData)) {
+            expect(sut, toCompleteWithResult: failure(.invalidData)) {
                 
                 let json = makeItemsJson([])
                 client.complete(withStatusCode: code, data: json, at: index)
@@ -63,7 +63,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     func test_load_deliversErrorOn200HTTPREsponseWithInvalidJSon() {
         let(sut, client) = makeSUT()
-        expect(sut, toCompleteWithResult: .failure(RemoteFeedLoader.Error.invalidData)) {
+        expect(sut, toCompleteWithResult: failure(.invalidData)) {
             let invalidJSon = Data(bytes: "invalid json".utf8)
             client.complete(withStatusCode: 200, data: invalidJSon)
         }
@@ -109,12 +109,17 @@ class RemoteFeedLoaderTests: XCTestCase {
     }
     
     // Mark: -Helpers
+    
     private func makeSUT(url: URL = URL(string: "https://a-url")!) -> (sut: RemoteFeedLoader, client: HttpClientSpy) {
         let client =  HttpClientSpy()
         let sut = RemoteFeedLoader(url: url, client: client)
         trackMemeoryLeaks(sut)
         trackMemeoryLeaks(client)
         return (sut, client)
+    }
+    
+    private func failure(_ error: RemoteFeedLoader.Error ) -> RemoteFeedLoader.Result {
+        return .failure(error)
     }
     
     private func trackMemeoryLeaks(_ instance: AnyObject, file: StaticString = #filePath,
