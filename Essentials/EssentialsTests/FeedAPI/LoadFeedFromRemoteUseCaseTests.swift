@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import Essentials
 
-class RemoteFeedLoaderTests: XCTestCase {
+class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
         
